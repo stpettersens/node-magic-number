@@ -1,0 +1,32 @@
+{
+  "name": "magic-number",
+  "version": "0.1.0",
+  "description": "Determine a file's type from its magic number.",
+  "main": "magic-number.js",
+  "preferGlobal": false,
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-typescript": "~2.7.7",
+    "gulp-insert": "~0.4.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stpettersens/node-magic-number"
+  },
+  "keywords": [
+    "magicnumber",
+    "magic",
+    "number",
+    "file",
+    "detection",
+    "type"
+  ],
+  "author": "Sam Saint-Pettersen <s.stpettersen+github@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stpettersens/node-magic-number/issues"
+  }
+}
