@@ -20,4 +20,6 @@ Methods:
 **magic.detectFile(file: string): string**
 
 Parameter *file* is path string for the file to test.
-Returns a MIME type for the tested file or 'unknown' if file type is not detected.
+Returns a MIME type for the tested file, 'unknown' if file type is not detected or
+message when file doesn't exist.
+
