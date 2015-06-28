@@ -2,3 +2,4 @@ node_modules/
 *.ts
 *.test.ts
 *.test.js
+Gulpfile.js
