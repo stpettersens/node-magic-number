@@ -1,6 +1,6 @@
 {
   "name": "magic-number",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Determine a file's type from its magic number.",
   "main": "magic-number.js",
   "preferGlobal": false,

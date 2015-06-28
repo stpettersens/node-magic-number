@@ -1,3 +1,4 @@
 node_modules/
-*.js
+*.ts
+*.test.ts
 *.test.js
