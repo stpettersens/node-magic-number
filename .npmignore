@@ -3,3 +3,5 @@ node_modules/
 *.test.ts
 *.test.js
 Gulpfile.js
+tsconfig.json
+test.zip

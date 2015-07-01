@@ -1,2 +1,4 @@
 node_modules/
 *.js
+tsconfig.json
+test.zip

@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 gulp.task('default', function() {
   return gulp.src('*.ts')
   .pipe(tsc({
+    noImplicitAny: true,
     module: 'commonjs'
   }))
   .pipe(gulp.dest('.'));

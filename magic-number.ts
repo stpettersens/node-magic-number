@@ -19,7 +19,6 @@ class MagicNumber {
 		var type: string = 'Error: File doesn\'t exist.';
 		if(fs.existsSync(file)) {
 			var mn: Buffer = fs.readFileSync(file);
-			console.log(mn);
 			if(toChar(mn[0]) == 'P' && toChar(mn[1]) == 'K') {
 				type = 'application/zip';
 			}
@@ -38,8 +37,23 @@ class MagicNumber {
 			else if(toChar(mn[1]) == 'P' && toChar(mn[2]) == 'N' && toChar(mn[3]) == 'G') {
 				type = 'image/png';
 			}
-			else if(mn[0]== 255 && mn[1] == 216 && mn[2] == 255) {
+			else if(toChar(mn[0]) == 'ÿ' && toChar(mn[1]) == 'Ø' && toChar(mn[2]) == 'ÿ' && toChar(mn[3]) == 'à') {
 				type = 'image/jpeg';
+			}
+			else if(toChar(mn[0]) == '%' && toChar(mn[1]) == '!' && toChar(mn[2]) == 'P' && toChar(mn[3]) == 'S') {
+				type = 'application/postscript';
+			}
+			else if(toChar(mn[0]) == '%' && toChar(mn[1]) == 'P' && toChar(mn[2]) == 'D' && toChar(mn[3]) == 'F') {
+				type = 'application/pdf';
+			}
+			else if(toChar(mn[0]) == 'Ê' && toChar(mn[1]) == 'þ' && toChar(mn[2]) == 'º' && toChar(mn[3]) == '¾') {
+				type = 'application/java-byte-code';
+			}
+			else if(toChar(mn[0]) == '8' && toChar(mn[1]) == 'B' && toChar(mn[2]) == 'P' && toChar(mn[3]) == 'S') {
+				type = 'image/vnd.adobe.photoshop';
+			}
+			else if(toChar(mn[0]) == 'O' && toChar(mn[1]) == 'g' && toChar(mn[2]) == 'g' && toChar(mn[3]) == 'S') {
+				type = 'audio/ogg';
 			}
 			else {
 				type = 'unknown';
