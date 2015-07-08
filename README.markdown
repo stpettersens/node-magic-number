@@ -10,7 +10,6 @@ Use from JavaScript:
 Use from [TypeScript](http://www.typescriptlang.org):
 
     /// <require path="typings/magic-number.d.ts" />
-     
     import magic = require('magic-number');
     magic.detectFile('file.zip'); // ==> 'application/zip'
     magic.detectFile('file.7z');  // ==> 'application/x-7z-compressed'
