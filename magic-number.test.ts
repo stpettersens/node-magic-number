@@ -3,8 +3,8 @@
 import magic = require('./magic-number');
 import fs = require('fs');
 
-var ids: any[] = [
-'PK', '7z', 'ý7z', 'Rar', 'GIF', ' PNG', 'ÿØÿà', '%!PS',
+var ids: string[] = [
+'PK', '7z', 'ý7z', 'Rar', 'GIF', 'PNG', 'ÿØÿà', '%!PS',
 '%PDF', 'Êþº¾', '8BPS', 'OggS'
 ];
 var exts: string[] = [

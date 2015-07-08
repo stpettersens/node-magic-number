@@ -20,11 +20,17 @@ class MagicNumber {
 
 	private static loadFileTypes(): void {
 		if(fs.existsSync('file.types')) {
-			var data: Buffer = fs.readFileSync('file.types');
-			for(var i: number = 0; i < data.length; i++) {
-				console.log(toChar(data[i]));
+			MagicNumber.mimes = new Array<string>();
+			MagicNumber.ids = new Array<string>();
+			var data: any = fs.readFileSync('file.types');
+			var lines: string[] = data.toString().split('\n');
+			for(var i: number = 0; i < lines.length; i++) {
+				var mi: string[] = lines[i].split(':');
+				if(mi[0] != '') {
+					MagicNumber.mimes.push(mi[0]);
+					MagicNumber.ids.push(mi[1]);
+				}
 			}
-			process.exit(-1);
 		}
 		else {
 			console.log('Error in magicnumber module: file.types file missing.')
@@ -36,16 +42,20 @@ class MagicNumber {
 		MagicNumber.loadFileTypes();
 		var type: string = 'Error: File doesn\'t exist.';
 		if(fs.existsSync(file)) {
-			var mn: Buffer = fs.readFileSync(file);
-			if(toChar(mn[0]) == 'P' && toChar(mn[1]) == 'K') {
-				type = 'application/zip';
-			}
-			else {
-				type = 'unknown';
+			var data: any = fs.readFileSync(file);
+			for(var i: number = 0; i < MagicNumber.ids.length; i++) {
+				var file_mn: string = '';
+				var compare_mn: string = MagicNumber.ids[i];
+				for(var x: number = 0; x < compare_mn.length; x++) {
+					file_mn += toChar(data[x]);
+				}
+				if(file_mn == compare_mn) {
+					type = MagicNumber.mimes[i];
+					break;
+				}
 			}
  		}
 		return type;
 	}
 }
-
 export = MagicNumber;
