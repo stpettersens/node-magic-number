@@ -40,7 +40,7 @@ class MagicNumber {
 
 	public static detectFile(file: string): string {
 		MagicNumber.loadFileTypes();
-		var type: string = 'Error: File doesn\'t exist.';
+		var type: string = 'unknown';
 		if(fs.existsSync(file)) {
 			var data: any = fs.readFileSync(file);
 			for(var i: number = 0; i < MagicNumber.ids.length; i++) {
