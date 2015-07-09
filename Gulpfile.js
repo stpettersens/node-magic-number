@@ -3,7 +3,8 @@
 */
 var gulp = require('gulp'),
       fs = require('fs'),
-     tsc = require('gulp-typescript');
+     tsc = require('gulp-typescript'),
+ replace = require('gulp-replace');
 
 gulp.task('default', function() {
   return gulp.src('*.ts')
@@ -11,6 +12,7 @@ gulp.task('default', function() {
     noImplicitAny: true,
     module: 'commonjs'
   }))
+  .pipe(replace(/\/{3}\s*<reference path=.*\/>\r*\n*/g, ''))
   .pipe(gulp.dest('.'));
 });
 
