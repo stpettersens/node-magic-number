@@ -1,13 +1,13 @@
 {
   "name": "magic-number",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Determine a file's type from its magic number.",
   "main": "magic-number.js",
   "preferGlobal": false,
   "devDependencies": {
     "gulp": "~3.9.0",
     "gulp-replace": "^0.5.3",
-    "gulp-typescript": "~2.7.7",
+    "gulp-typescript": "~2.8.0",
     "mocha": "^2.2.5",
     "should": "^7.0.1"
   },
