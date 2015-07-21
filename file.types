@@ -6,6 +6,9 @@ application/x-7z-compressed:7z
 application/x-rar-compressed:Rar
 application/x-xz:ý7z
 application/zip:PK
+audio/mpeg:ID3
+audio/mpeg:˙ű
+audio/x-flac:fLaC
 image/gif:GIF
 image/jpeg:ÿØÿà
 image/png:PNG
