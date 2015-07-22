@@ -8,7 +8,7 @@ should = require('should'),
 fs = require('fs');
              
 describe('Detect various file types from magic number', function() {
-    it('Return MIME types for some generated files', function() {
+    it('Return MIME types for some generated files', function(done) {
         var mimes = [];
         var ids = [];
         var exts = [];  
@@ -38,5 +38,6 @@ describe('Detect various file types from magic number', function() {
             magic.detectFile('test' + exts[i]).should.equal(mimes[i]).and.be.a.String;
             fs.unlinkSync('test' + exts[i]);
         }
+        done();
     });
 });
