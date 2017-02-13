@@ -8,6 +8,7 @@
 /// <reference path="typings/node.d.ts" />
 
 import fs = require('fs');
+import path = require('path');
 
 class MagicNumber {
 
@@ -17,7 +18,7 @@ class MagicNumber {
 	private static loadFileTypes(definitions: string = "file.types"): void {
 		MagicNumber.mimes = new Array<string>();
 		MagicNumber.ids = new Array<string>();
-		var data: any = fs.readFileSync(definitions);
+		var data: any = fs.readFileSync(path.resolve(__dirname, definitions));
 		var lines: string[] = data.toString().split('\n');
 		for(var i: number = 0; i < lines.length; i++) {
 			var mi: string[] = lines[i].split(':');

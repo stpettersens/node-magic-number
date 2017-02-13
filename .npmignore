@@ -1,7 +1,12 @@
 node_modules/
+typings/
 *.ts
 *.test.ts
 *.test.js
+braksator.js
 Gulpfile.js
 tsconfig.json
 test.zip
+.npmignore
+.travis.yml
+*.tgz
