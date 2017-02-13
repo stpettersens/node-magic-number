@@ -9,3 +9,4 @@ node_js:
 
 before_script: npm run build
 script: npm test
+after_script: gulp js

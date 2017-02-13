@@ -22,6 +22,10 @@ gulp.task('test', function() {
   .pipe(mocha({reporter: 'min'}));
 })
 
+gulp.task('js', function() {
+  console.log(fs.readFileSync('magic-number.js', 'utf-8').toString());
+})
+
 gulp.task('clean', function() {
   fs.unlinkSync('magic-number.js');
   fs.unlinkSync('magic-number.test.js');
