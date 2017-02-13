@@ -29,6 +29,8 @@ describe('Detect various file types from magic number', function() {
         for(var y = 0; y < lines.length; y++) {
             if(lines[y] != '') exts.push(lines[y]);
         }
+
+        magic.loadFileTypes(); // Uses default parameter: 'file.types'.
         
         for(var i = 0; i < exts.length; i++) {
             var buffer = new Buffer(100);
