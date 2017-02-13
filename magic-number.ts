@@ -19,7 +19,8 @@ class MagicNumber {
 	private static ids: string[];
 
 	private static loadFileTypes(): void {
-		if(fs.existsSync('file.types')) {
+		//if(fs.existsSync('file.types')) {
+		try {
 			MagicNumber.mimes = new Array<string>();
 			MagicNumber.ids = new Array<string>();
 			var data: any = fs.readFileSync('file.types');
@@ -32,14 +33,17 @@ class MagicNumber {
 				}
 			}
 		}
-		else {
+		catch(e) {
+			console.error('magic-number error:');
+			console.error(e.status);
+		}
+		/*else {
 			console.log('Error in magicnumber module: file.types file missing.')
 			process.exit(-1);
-		}
+		}*/
 	}
 
 	public static detectFile(file: string): string {
-		MagicNumber.loadFileTypes();
 		var type: string = 'unknown';
 		if(fs.existsSync(file)) {
 			var data: any = fs.readFileSync(file);
