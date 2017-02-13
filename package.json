@@ -6,14 +6,16 @@
   "preferGlobal": false,
   "devDependencies": {
     "gulp": "~3.9.0",
+    "gulp-mocha": "^3.0.1",
     "gulp-replace": "^0.5.3",
-    "gulp-typescript": "~2.8.0",
-    "mocha": "^2.2.5",
-    "should": "^7.0.1"
+    "gulp-typescript": "^3.1.4",
+    "mocha": "^3.2.0",
+    "should": "^11.2.0",
+    "typescript": "^2.1.6"
   },
   "scripts": {
     "build": "gulp",
-    "test": "node node_modules/mocha/bin/mocha magic-number.test.js"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
