@@ -9,9 +9,9 @@
 
 import fs = require('fs');
 
-function toChar(dec: number): string {
+/*function toChar(dec: number): string {
 	return String.fromCharCode(dec);
-}
+}*/
 
 class MagicNumber {
 
@@ -40,7 +40,7 @@ class MagicNumber {
 				var file_mn: string = '';
 				var compare_mn: string = MagicNumber.ids[i];
 				for(var x: number = 0; x < compare_mn.length; x++) {
-					file_mn += toChar(data[x]);
+					file_mn += data[x]; //toChar(data[x]);
 				}
 				if(file_mn == compare_mn) {
 					type = MagicNumber.mimes[i];

@@ -34,5 +34,4 @@ You should call this method before invoking *magic.detectFile(file)*.
 **magic.detectFile(file: string): string**
 
 Parameter *file* is path string for the file to test.
-Returns a MIME type for the tested file, 'unknown' if file type is not detected or
-message when file doesn't exist.
+Returns a MIME type for the tested file, 'unknown' if file type is not known.

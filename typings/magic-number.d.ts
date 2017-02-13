@@ -4,5 +4,6 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 declare module "magic-number" {
+	export function loadFileTypes(definitions?: string): void;
 	export function detectFile(file: string): string;
 }
