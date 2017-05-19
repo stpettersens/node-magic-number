@@ -38,22 +38,28 @@ class MagicNumber {
 		}
 	}
 
-	public static detectFile(file: string): string {
+	public static detectType(data: any): string {
 		MagicNumber.loadFileTypes();
+		var type: string = 'unknown';
+		for(var i: number = 0; i < MagicNumber.ids.length; i++) {
+			var file_mn: string = '';
+			var compare_mn: string = MagicNumber.ids[i];
+			for(var x: number = 0; x < compare_mn.length; x++) {
+				file_mn += toChar(data[x]);
+			}
+			if(file_mn == compare_mn) {
+				type = MagicNumber.mimes[i];
+				break;
+			}
+		}
+		return type;
+	}
+
+	public static detectFile(file: string): string {
 		var type: string = 'unknown';
 		if(fs.existsSync(file)) {
 			var data: any = fs.readFileSync(file);
-			for(var i: number = 0; i < MagicNumber.ids.length; i++) {
-				var file_mn: string = '';
-				var compare_mn: string = MagicNumber.ids[i];
-				for(var x: number = 0; x < compare_mn.length; x++) {
-					file_mn += toChar(data[x]);
-				}
-				if(file_mn == compare_mn) {
-					type = MagicNumber.mimes[i];
-					break;
-				}
-			}
+			type = this.detectType(data);
  		}
 		return type;
 	}

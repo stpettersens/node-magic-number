@@ -40,4 +40,34 @@ describe('Detect various file types from magic number', function() {
         }
         done();
     });
+    it('Return MIME types for some generated data', function(done) {
+        var mimes = [];
+        var ids = [];
+        var exts = [];
+
+        var data = fs.readFileSync('file.types');
+        var lines = data.toString().split('\n');
+
+        for(var x = 0; x < lines.length; x++) {
+            var mi = lines[x].split(':');
+            if(mi[0] != '') {
+                mimes.push(mi[0]);
+                ids.push(mi[1]);
+            }
+        }
+
+        data = fs.readFileSync('file.exts');
+        lines = data.toString().split('\n');
+        for(var y = 0; y < lines.length; y++) {
+            if(lines[y] != '') exts.push(lines[y]);
+        }
+
+        for(var i = 0; i < exts.length; i++) {
+            var buffer = new Buffer(100);
+            buffer.write(ids[i], 'binary');
+            console.log(exts[i] + ' ==> ' + magic.detectType(buffer));
+            magic.detectType(buffer).should.equal(mimes[i]).and.be.a.String;
+        }
+        done();
+    });
 });
