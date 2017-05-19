@@ -25,5 +25,10 @@ Methods:
 **magic.detectFile(file: string): string**
 
 Parameter *file* is path string for the file to test.
+
+**magic.detectType(data: any): string**
+
+Parameter *data* is binary data for the file to test.
+
 Returns a MIME type for the tested file, 'unknown' if file type is not detected or
 message when file doesn't exist.
