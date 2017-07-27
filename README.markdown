@@ -1,5 +1,6 @@
 #### Magic-number
-[![Build Status](https://travis-ci.org/stpettersens/node-magic-number.svg?branch=master)](https://travis-ci.org/stpettersens/node-magic-number) [![npm version](https://badge.fury.io/js/magic-number.svg)](http://npmjs.org/package/magic-number) [![Development Dependency Status](https://david-dm.org/stpettersens/node-magic-number/dev-status.png?theme=shields.io)](https://david-dm.org/stpettersens/node-magic-number#info=devDependencies) 
+
+[![Build Status](https://travis-ci.org/SnorpxyzArtists/node-magic-number.svg?branch=master)](https://travis-ci.org/SnorpxyzArtists/node-magic-number) [![npm version](https://badge.fury.io/js/magic-number.svg)](http://npmjs.org/package/magic-number) [![Development Dependency Status](https://david-dm.org/SnorpxyzArtists/node-magic-number/dev-status.png?theme=shields.io)](https://david-dm.org/SnorpxyzArtists/node-magic-number#info=devDependencies) 
 
 Node.js module to determine a file's type from its magic number.
 
