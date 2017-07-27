@@ -28,6 +28,16 @@
     "type"
   ],
   "author": "Sam Saint-Pettersen <s.stpettersen+github@gmail.com>",
+  "contributors": [
+    {
+      "name": "Thurston",
+      "url": "https://github.com/tstone2077"
+    },
+    {
+      "name": "Casey Joel Parker",
+      "url": "https://github.com/caseyparker"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stpettersens/node-magic-number/issues"
