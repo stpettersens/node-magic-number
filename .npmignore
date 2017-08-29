@@ -7,3 +7,5 @@ tsconfig.json
 test.zip
 .npmignore
 .travis.yml
+imports.js
+package-lock.json # should we ignore these? I'm going to for now.
